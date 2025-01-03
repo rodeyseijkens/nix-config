@@ -18,9 +18,6 @@ in {
 
         # nix formatting
         kamadorueda.alejandra
-
-        # toml
-        tamasfe.even-better-toml
       ])
       ++ (with marketplace; [
         github.copilot
