@@ -7,7 +7,7 @@
       start-at-login = true
       after-login-command = []
       after-startup-command = [
-        'exec-and-forget /opt/homebrew/bin/borders style=round width=6.0 inactive_color=0xaa2e3440 active_color=0xff88c0d0',
+        'exec-and-forget /opt/homebrew/bin/borders width=6.0 inactive_color=0x00000000 active_color=0xff98871a',
         'exec-and-forget /opt/homebrew/bin/sketchybar'
       ]
 
@@ -99,7 +99,7 @@
         'reload-config',
         'mode main',
         'exec-and-forget sketchybar --reload',
-        # 'exec-and-forget borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=2.0',
+        'exec-and-forget /opt/homebrew/bin/borders width=6.0 inactive_color=0x00000000 active_color=0xff98871a',
         'exec-and-forget sleep 0.5 && sketchybar --trigger send_message MESSAGE="Aerospace Reloaded"',
       ]
 
