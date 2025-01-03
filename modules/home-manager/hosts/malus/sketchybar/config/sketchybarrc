@@ -1,0 +1,83 @@
+#!/bin/bash
+
+source "$CONFIG_DIR/colors.sh" # Loads all defined colors
+# source "$CONFIG_DIR/icons.sh" # Loads all defined icons
+
+# This is a demo config to showcase some of the most important commands.
+# It is meant to be changed and configured, as it is intentionally kept sparse.
+# For a (much) more advanced configuration example see my dotfiles:
+# https://github.com/FelixKratz/dotfiles
+
+ITEMS_DIR="$CONFIG_DIR/items"
+PLUGIN_DIR="$CONFIG_DIR/plugins"
+
+FONT="FiraCode Nerd Font"
+
+##### Bar Appearance #####
+# Configuring the general appearance of the bar.
+# These are only some of the options available. For all options see:
+# https://felixkratz.github.io/SketchyBar/config/bar
+# If you are looking for other colors, see the color picker:
+# https://felixkratz.github.io/SketchyBar/config/tricks#color-picker
+
+# Setting up the general bar appearance of the bar
+bar=(
+    height=50
+    color=$NORD_WHITE_1
+    border_width=2
+    border_color=$NORD_WHITE_2
+    shadow=off
+    position=top
+    sticky=on
+    padding_right=10
+    padding_left=10
+    y_offset=-5
+    margin=-2
+    topmost=window
+    color=0x00000000
+    border_color=0x00000000
+)
+
+sketchybar --bar "${bar[@]}"
+
+##### Changing Defaults #####
+# We now change some default values, which are applied to all further items.
+# For a full list of all available item properties see:
+# https://felixkratz.github.io/SketchyBar/config/items
+
+default=(
+    icon.font="$FONT:Regular:16.0"
+    icon.color=$NORD_WHITE_3
+    icon.padding_left=0
+    icon.padding_right=0
+    label.font="$FONT:Semibold:16.0"
+    label.color=$NORD_WHITE_3
+    label.padding_left=0
+    label.padding_right=0
+    # label.shadow.drawing=on
+    # label.shadow.distance=2
+    # label.shadow.color=0x99000000
+    background.padding_right=0
+    background.padding_left=0
+    # background.height=26
+    # background.corner_radius=9
+    # background.border_width=2
+)
+sketchybar --default "${default[@]}"
+
+##### Adding Left Items #####
+source "$ITEMS_DIR/aerospace.sh"
+source "$ITEMS_DIR/front_app.sh"
+
+##### Adding Center Items #####
+
+##### Adding Right Items #####
+source "$ITEMS_DIR/clock.sh"
+source "$ITEMS_DIR/calendar.sh"
+source "$ITEMS_DIR/volume.sh"
+source "$ITEMS_DIR/battery.sh"
+
+
+
+##### Force all scripts to run the first time (never do this in a script) #####
+sketchybar --update
