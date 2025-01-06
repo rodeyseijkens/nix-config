@@ -11,5 +11,6 @@
     ./p10k
     ./ssh
     ./zsh
+    ./vscode
   ];
 }
