@@ -58,10 +58,6 @@
         greedy = true;
       }
       {
-        name = "spotify";
-        greedy = true;
-      }
-      {
         name = "pearcleaner";
         greedy = true;
       }
@@ -75,14 +71,6 @@
       }
       {
         name = "the-unarchiver";
-        greedy = true;
-      }
-      {
-        name = "firefox";
-        greedy = true;
-      }
-      {
-        name = "firefox";
         greedy = true;
       }
       {
