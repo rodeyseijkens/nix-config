@@ -12,5 +12,8 @@
     ./ssh
     ./zsh
     ./vscode
+    ./fzf
+    ./spicetify
+    ./packages
   ];
 }

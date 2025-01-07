@@ -5,4 +5,5 @@
   pkgs = import ./pkgs.nix;
   system = import ./system.nix;
   users = import ./users.nix;
+  flatpak = import ./flatpak.nix;
 }
