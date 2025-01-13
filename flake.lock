@@ -64,6 +64,22 @@
         "type": "github"
       }
     },
+    "firefox-gnome-theme": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1736257308,
+        "narHash": "sha256-mRE/foGagh2XarMerOXtgldpxiCb/dQa7tHOpPpP2Zw=",
+        "owner": "rafaelmardojai",
+        "repo": "firefox-gnome-theme",
+        "rev": "a5029a0797d9ab4d5a20f223cacddd70e3748dc8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "rafaelmardojai",
+        "repo": "firefox-gnome-theme",
+        "type": "github"
+      }
+    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -72,6 +88,22 @@
         "owner": "edolstra",
         "repo": "flake-compat",
         "rev": "0f9255e01c2351cc7d116c072cb317785dd33b33",
+        "type": "github"
+      },
+      "original": {
+        "owner": "edolstra",
+        "repo": "flake-compat",
+        "type": "github"
+      }
+    },
+    "flake-compat_2": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1733328505,
+        "narHash": "sha256-NeCCThCEP3eCl2l/+27kNNK7QrwZB1IJCrXfrbv5oqU=",
+        "owner": "edolstra",
+        "repo": "flake-compat",
+        "rev": "ff81ac966bb2cae68946d5ed5fc4994f96d0ffec",
         "type": "github"
       },
       "original": {
@@ -309,13 +341,36 @@
     "root": {
       "inputs": {
         "agenix": "agenix",
+        "firefox-gnome-theme": "firefox-gnome-theme",
         "home-manager": "home-manager",
         "impermanence": "impermanence",
         "nix-darwin": "nix-darwin",
         "nix-homebrew": "nix-homebrew",
         "nix-vscode-extensions": "nix-vscode-extensions",
         "nixpkgs": "nixpkgs_2",
-        "nur": "nur"
+        "nur": "nur",
+        "spicetify-nix": "spicetify-nix"
+      }
+    },
+    "spicetify-nix": {
+      "inputs": {
+        "flake-compat": "flake-compat_2",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1736741830,
+        "narHash": "sha256-7cXbJ3t/gvuHTI1uJ8juBK1NmSs4tRSGsb0MtCGo70o=",
+        "owner": "gerg-l",
+        "repo": "spicetify-nix",
+        "rev": "e1a0822469d975d25de4953860a15662fe5d6595",
+        "type": "github"
+      },
+      "original": {
+        "owner": "gerg-l",
+        "repo": "spicetify-nix",
+        "type": "github"
       }
     },
     "systems": {
