@@ -73,7 +73,7 @@ in {
       "workbench.layoutControl.enabled" = false;
       "workbench.layoutControl.type" = "menu";
       "workbench.startupEditor" = "none";
-      "workbench.statusBar.visible" = false;
+      "workbench.statusBar.visible" = true;
 
       # Extension settings
       "material-icon-theme.folders.theme" = "classic";
