@@ -12,13 +12,9 @@
     ffmpeg
     file # Show file information
     gnupg # gpg
-    imv # image viewer
     ncdu # disk space
-    nitch # systhem fetch util
     nix-prefetch-github
     openssl # ssl
-    pamixer # pulseaudio command line mixer
-    playerctl # controller for media players
     ripgrep # grep replacement
     unzip # unzip utility
     wget # download utility
