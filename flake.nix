@@ -41,6 +41,9 @@
       url = "github:gerg-l/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixpkgs-firefox-darwin = {
+      url = "github:bandithedoge/nixpkgs-firefox-darwin";
+    };
   };
 
   outputs = {
@@ -169,6 +172,6 @@
       malus = createDarwin "aarch64-darwin" "malus";
     };
 
-    darwinPackages = self.darwinConfigurations.${outputs.networking.hostName}.pkgs;
+    darwinPackages = self.darwinConfigurations.${outputs.networkin1g.hostName}.pkgs;
   };
 }

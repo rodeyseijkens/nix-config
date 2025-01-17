@@ -15,6 +15,7 @@
 
   nixpkgs = {
     overlays = [
+      inputs.nixpkgs-firefox-darwin.overlay
       inputs.nur.overlays.default
     ];
   };

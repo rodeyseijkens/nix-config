@@ -1,4 +1,9 @@
-{inputs, ...}: {
+{
+  inputs,
+  pkgs,
+  system,
+  ...
+}: {
   home = {
     sessionVariables.BROWSER = "firefox";
 
@@ -10,6 +15,10 @@
 
   programs.firefox = {
     enable = true;
+    package =
+      if (system == "aarch64-darwin")
+      then pkgs.firefox-bin # IMPORTANT: use a package provided by the overlay (ends with `-bin`) see overlay.nix for all possible packages
+      else pkgs.firefox;
     profiles.default = {
       name = "Default";
       settings = {
