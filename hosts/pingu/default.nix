@@ -18,5 +18,8 @@
     networkmanager.enable = false;
   };
 
+  # Driver Options
+  drivers.nvidiagpu.enable = true;
+
   system.stateVersion = "24.11";
 }

@@ -44,6 +44,23 @@
     nixpkgs-firefox-darwin = {
       url = "github:bandithedoge/nixpkgs-firefox-darwin";
     };
+    hyprmag = {
+      url = "github:SIMULATAN/hyprmag";
+    };
+    hypr-contrib = {
+      url = "github:hyprwm/contrib";
+    };
+    hyprpicker = {
+      url = "github:hyprwm/hyprpicker";
+    };
+    hyprland = {
+      type = "git";
+      url = "https://github.com/hyprwm/Hyprland";
+      submodules = true;
+    };
+    nix-flatpak = {
+      url = "github:gmodena/nix-flatpak";
+    };
   };
 
   outputs = {
