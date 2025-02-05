@@ -1,6 +1,7 @@
 {
   inputs,
   vars,
+  pkgs,
   ...
 }: {
   programs.dconf.enable = true;
