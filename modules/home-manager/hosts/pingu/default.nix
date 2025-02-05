@@ -7,7 +7,6 @@
     ./packages
     ./rofi
     ./scripts
-    ./steam
     ./swaync
     ./swayosd
     ./viewnior

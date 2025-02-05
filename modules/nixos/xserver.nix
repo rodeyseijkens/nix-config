@@ -1,6 +1,6 @@
 {
   pkgs,
-  username,
+  vars,
   ...
 }: {
   services = {
@@ -12,7 +12,7 @@
 
     displayManager.autoLogin = {
       enable = true;
-      user = "${username}";
+      user = "${vars.username}";
     };
     libinput = {
       enable = true;

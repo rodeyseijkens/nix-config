@@ -11,4 +11,6 @@
   system = import ./system.nix;
   users = import ./users.nix;
   xserver = import ./xserver.nix;
+  steam = import ./steam.nix;
+  wayland = import ./wayland.nix;
 }
