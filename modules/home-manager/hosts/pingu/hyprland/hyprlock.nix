@@ -1,6 +1,5 @@
 {
   pkgs,
-  host,
   ...
 }: let
   text = "rgb(251, 241, 199)";
