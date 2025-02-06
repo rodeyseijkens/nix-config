@@ -10,10 +10,10 @@
 
   services.nix-daemon.enable = true;
 
-  # networking = {
-  #   hostName = "${hostname}.${username}";
-  #   localHostName = hostname;
-  # };
+  networking = {
+    hostName = hostname;
+    localHostName = hostname;
+  };
 
   users.users.${vars.username}.home = "/Users/${vars.username}";
 

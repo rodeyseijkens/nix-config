@@ -1,5 +1,5 @@
 {
-  description = "homelab flake";
+  description = "rodey's flake";
 
   inputs = {
     nixpkgs = {
@@ -12,6 +12,9 @@
     nix-darwin = {
       url = "github:LnL7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+    mac-app-util = {
+      url = "github:hraban/mac-app-util";
     };
     nix-homebrew = {
       url = "github:zhaofengli-wip/nix-homebrew";
@@ -50,6 +53,7 @@
     self,
     nixpkgs,
     nix-darwin,
+    mac-app-util,
     nix-homebrew,
     home-manager,
     agenix,
@@ -136,8 +140,12 @@
           ++ [
             (./. + "/hosts/${hostname}")
             agenix.nixosModules.default
+            mac-app-util.darwinModules.default
             home-manager.darwinModules.home-manager
             {
+              home-manager.sharedModules = [
+                mac-app-util.homeManagerModules.default
+              ];
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users."${vars.username}" = homeManagerModules;
@@ -172,6 +180,6 @@
       malus = createDarwin "aarch64-darwin" "malus";
     };
 
-    darwinPackages = self.darwinConfigurations.${outputs.networkin1g.hostName}.pkgs;
+    darwinPackages = self.darwinConfigurations.${outputs.networking.hostName}.pkgs;
   };
 }

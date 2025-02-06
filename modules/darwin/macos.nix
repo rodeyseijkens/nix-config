@@ -34,9 +34,9 @@
         persistent-apps = [
           "/Applications/Marta.app"
           "/Applications/Google Chrome.app"
-          "/Applications/Firefox.app"
-          "/Users/${vars.username}/Applications/Home Manager Apps/kitty.app"
-          "/Users/${vars.username}/Applications/Home Manager Apps/Visual Studio Code.app"
+          "/Users/${vars.username}/Applications/Home Manager Trampolines/Firefox.app"
+          "/Users/${vars.username}/Applications/Home Manager Trampolines/kitty.app"
+          "/Users/${vars.username}/Applications/Home Manager Trampolines/Visual Studio Code.app"
         ];
         expose-animation-duration = 0.2;
         expose-group-apps = true;

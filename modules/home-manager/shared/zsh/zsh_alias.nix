@@ -9,6 +9,7 @@ in {
       # Utils
       c = "clear";
       cd = "z";
+      reload = ". ~/.zshrc && echo 'ZSH config reloaded from ~/.zshrc' && sleep 1 && clear";
       #   cat = "bat";
       #   nano = "micro";
       #   code =
@@ -34,12 +35,12 @@ in {
       # Nixos
       cdnix = "cd ~/nix-config && code ~/nix-config";
       nix-build = "cd ~/nix-config && ${systemSpecificRebuildCmd} switch --flake";
-      #   ns = "nom-shell --run zsh";
-      #   nix-switch = "nh os switch";
-      #   nix-update = "nh os switch --update";
-      #   nix-clean = "nh clean all --keep 5";
-      #   nix-search = "nh search";
-      #   nix-test = "nh os test";
+      ns = "nom-shell --run zsh";
+      nix-switch = "nh os switch";
+      nix-update = "nh os switch --update";
+      nix-clean = "nh clean all --keep 5";
+      nix-search = "nh search";
+      nix-test = "nh os test";
 
       # python
       #   piv = "python -m venv .venv";

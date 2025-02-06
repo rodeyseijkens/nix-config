@@ -27,6 +27,9 @@
     python3
     python312Packages.ipython
 
+    # Node.js
+    volta
+
     # Language servers and formatters
     alejandra # nix formatter
     bash-language-server
