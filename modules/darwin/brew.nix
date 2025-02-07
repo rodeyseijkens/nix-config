@@ -78,6 +78,10 @@
         greedy = true;
       }
       {
+        name = "qspace-pro";
+        greedy = true;
+      }
+      {
         name = "marta";
         greedy = true;
       }
@@ -89,6 +93,10 @@
         name = "tigervnc-viewer";
         greedy = true;
       }
+      {
+        name = "beekeeper-studio";
+        greedy = true;
+      }
     ];
 
     masApps = {
@@ -97,7 +105,7 @@
       "Pages" = 409201541;
       "Tailscale" = 1475387142;
       "ProtonPassForSafari" = 6502835663;
-      # "wireguard" = 1451685025;
+      "wireguard" = 1451685025;
     };
   };
 }
