@@ -1,8 +1,6 @@
 local colors = require("config.colors")
 
-local whitelist = {
-  ["Psst"] = true,
-};
+local whitelist = {};
 
 local media_cover = sbar.add("item", {
   position = "left",

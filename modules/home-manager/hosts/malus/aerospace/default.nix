@@ -28,7 +28,8 @@
       ]
 
       on-focus-changed = [
-        'exec-and-forget sketchybar --trigger front_app_switched'
+        'exec-and-forget sketchybar --trigger front_app_switched',
+        'exec-and-forget sketchybar --trigger update_windows'
       ]
 
       [gaps]
@@ -43,9 +44,9 @@
       # cmd-h = [] # Disable "hide application"
       cmd-alt-h = [] # Disable "hide others"
 
-      cmd-enter = 'exec-and-forget open -n "/Users/${vars.username}/Applications/Home Manager Apps/kitty.app"'
+      cmd-enter = 'exec-and-forget open -n "/Users/${vars.username}/Applications/Home Manager Trampolines/kitty.app"'
       cmd-e = 'exec-and-forget open -n "/Applications/Marta.app"'
-      cmd-b = 'exec-and-forget open -n "/Applications/Firefox.app/"'
+      cmd-b = 'exec-and-forget open -n "/Users/${vars.username}/Applications/Home Manager Trampolines/Firefox.app"'
 
       alt-semicolon = [
         'mode service',
@@ -140,17 +141,17 @@
       run = ['layout floating']
 
       [[on-window-detected]]
-      if.app-id = 'com.jpochyla.psst'
-      check-further-callbacks = true
-      run = ['layout tiling', 'move-node-to-workspace 8']
-
-      [[on-window-detected]]
       if.app-id = 'com.apple.finder'
       check-further-callbacks = true
       run = ['layout tiling', 'move-node-to-workspace 4']
 
       [[on-window-detected]]
       if.app-id = 'org.yanex.marta'
+      check-further-callbacks = true
+      run = ['layout tiling', 'move-node-to-workspace 4']
+
+      [[on-window-detected]]
+      if.app-id = 'com.jinghaoshe.qspace.pro'
       check-further-callbacks = true
       run = ['layout tiling', 'move-node-to-workspace 4']
 
