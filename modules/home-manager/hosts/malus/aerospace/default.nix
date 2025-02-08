@@ -46,6 +46,7 @@
 
       cmd-enter = 'exec-and-forget open -n "/Users/${vars.username}/Applications/Home Manager Trampolines/kitty.app"'
       cmd-e = 'exec-and-forget open -n "/Applications/Marta.app"'
+      cmd-shift-e = 'exec-and-forget open -n "/Applications/QSpace Pro.app"'
       cmd-b = 'exec-and-forget open -n "/Users/${vars.username}/Applications/Home Manager Trampolines/Firefox.app"'
 
       alt-semicolon = [

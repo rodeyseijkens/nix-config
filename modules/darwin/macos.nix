@@ -32,11 +32,9 @@
         static-only = false;
         dashboard-in-overlay = false;
         persistent-apps = [
+          "/Applications/QSpace Pro.app"
           "/Applications/Marta.app"
           "/Applications/Google Chrome.app"
-          "/Users/${vars.username}/Applications/Home Manager Trampolines/Firefox.app"
-          "/Users/${vars.username}/Applications/Home Manager Trampolines/kitty.app"
-          "/Users/${vars.username}/Applications/Home Manager Trampolines/Visual Studio Code.app"
         ];
         expose-animation-duration = 0.2;
         expose-group-apps = true;
