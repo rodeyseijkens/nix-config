@@ -7,8 +7,8 @@
       start-at-login = true
       after-login-command = []
       after-startup-command = [
-        'exec-and-forget /opt/homebrew/bin/borders width=6.0 inactive_color=0x00000000 active_color=0xff98871a',
-        'exec-and-forget /opt/homebrew/bin/sketchybar'
+        'exec-and-forget /opt/homebrew/bin/borders width=6.0 inactive_color=0x00000000 active_color=0xff98871a'
+        # 'exec-and-forget /opt/homebrew/bin/sketchybar'
       ]
 
       key-mapping.preset = 'qwerty'
@@ -21,16 +21,16 @@
       default-root-container-layout = 'tiles'
       default-root-container-orientation = 'auto'
 
-      exec-on-workspace-change = [
-        '/bin/bash',
-        '-c',
-        'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE'
-      ]
+      # exec-on-workspace-change = [
+      #   '/bin/bash',
+      #   '-c',
+      #   'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE'
+      # ]
 
-      on-focus-changed = [
-        'exec-and-forget sketchybar --trigger front_app_switched',
-        'exec-and-forget sketchybar --trigger update_windows'
-      ]
+      # on-focus-changed = [
+      #   'exec-and-forget sketchybar --trigger front_app_switched',
+      #   'exec-and-forget sketchybar --trigger update_windows'
+      # ]
 
       [gaps]
       outer.bottom =     [{monitor.'^built-in retina display$' = 10 }, 10]
@@ -50,8 +50,8 @@
       cmd-b = 'exec-and-forget open -n "/Users/${vars.username}/Applications/Home Manager Trampolines/Firefox.app"'
 
       alt-semicolon = [
-        'mode service',
-        'exec-and-forget sketchybar --trigger send_message MESSAGE="Aerospace in Service Mode" HOLD="true"',
+        'mode service'
+        # 'exec-and-forget sketchybar --trigger send_message MESSAGE="Aerospace in Service Mode" HOLD="true"',
       ]
 
       cmd-h = 'focus --boundaries all-monitors-outer-frame --boundaries-action stop left'
@@ -94,15 +94,15 @@
       cmd-shift-9 = 'move-node-to-workspace 9'
       cmd-shift-0 = 'move-node-to-workspace 10'
 
-      alt-m = 'exec-and-forget sketchybar --trigger aerospace_switch'
+      # alt-m = 'exec-and-forget sketchybar --trigger aerospace_switch'
 
       [mode.service.binding]
       esc = [
         'reload-config',
         'mode main',
-        'exec-and-forget sketchybar --reload',
+        # 'exec-and-forget sketchybar --reload',
         'exec-and-forget /opt/homebrew/bin/borders width=6.0 inactive_color=0x00000000 active_color=0xff98871a',
-        'exec-and-forget sleep 0.5 && sketchybar --trigger send_message MESSAGE="Aerospace Reloaded"',
+        # 'exec-and-forget sleep 0.5 && sketchybar --trigger send_message MESSAGE="Aerospace Reloaded"',
       ]
 
       t = [
