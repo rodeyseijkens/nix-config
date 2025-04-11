@@ -59,10 +59,6 @@
         greedy = true;
       }
       {
-        name = "vial";
-        greedy = true;
-      }
-      {
         name = "legcord";
         greedy = true;
       }
