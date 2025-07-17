@@ -1,8 +1,13 @@
-{config, ...}: {
+{...}: {
   programs.kitty = {
     enable = true;
 
     themeFile = "gruvbox-dark-hard";
+
+    font = {
+      name = "Maple Mono";
+      size = 14;
+    };
 
     extraConfig = ''
       font_features MapleMono-Regular +ss01 +ss02 +ss04

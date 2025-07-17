@@ -9,21 +9,13 @@ in {
       # Utils
       c = "clear";
       cd = "z";
-      reload = ". ~/.zshrc && echo 'ZSH config reloaded from ~/.zshrc' && sleep 1 && clear";
-      #   cat = "bat";
-      #   nano = "micro";
-      #   code =
-      #     if (config.modules.vscodium.enable)
-      #     then "codium"
-      #     else "code";
-      #   diff = "delta --diff-so-fancy --side-by-side";
-      #   less = "bat";
+      cat = "bat";
+      # nano = "micro";
+      code = "code";
+      diff = "delta --diff-so-fancy --side-by-side";
+      less = "bat";
       y = "yazi";
-      #   py = "python";
-      #   ipy = "ipython";
-      #   icat = "kitten icat";
       dsize = "du -hs";
-      #   pdf = "tdf";
       open = "xdg-open";
       space = "ncdu";
       man = "BAT_THEME='default' batman";
@@ -45,35 +37,8 @@ in {
       nix-test = "nh os test";
 
       # python
-      #   piv = "python -m venv .venv";
-      #   psv = "source .venv/bin/activate";
-
-      # git
-      g = "lazygit";
-      gf = "onefetch --number-of-file-churns 0 --no-color-palette";
-      ga = "git add";
-      gaa = "git add --all";
-      gs = "git status";
-      gb = "git branch";
-      gm = "git merge";
-      gd = "git diff";
-      gpl = "git pull";
-      gplo = "git pull origin";
-      gps = "git push";
-      gpsf = "git push --force";
-      gpso = "git push origin";
-      gpst = "git push --follow-tags";
-      gcl = "git clone";
-      gc = "git commit";
-      gcm = "git commit -m";
-      gcma = "git add --all && git commit -m";
-      gtag = "git tag -ma";
-      gch = "git checkout";
-      gchb = "git checkout -b";
-      glog = "git log --oneline --decorate --graph";
-      glol = "git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset'";
-      glola = "git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --all";
-      glols = "git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --stat";
+      piv = "python -m venv .venv";
+      psv = "source .venv/bin/activate";
     };
   };
 }

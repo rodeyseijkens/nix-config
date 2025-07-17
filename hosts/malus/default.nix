@@ -18,4 +18,6 @@
   users.users.${vars.username}.home = "/Users/${vars.username}";
 
   system.stateVersion = 5;
+
+  system.primaryUser = "${vars.username}";
 }

@@ -1,12 +1,7 @@
-{
-  inputs,
-  pkgs,
-  system,
-  ...
-}: {
+{inputs, ...}: let
+  searchConfig = import ./profiles/search.nix;
+in {
   home = {
-    sessionVariables.BROWSER = "firefox";
-
     file."firefox-gnome-theme" = {
       target = ".mozilla/firefox/default/chrome/firefox-gnome-theme";
       source = inputs.firefox-gnome-theme;
@@ -15,10 +10,6 @@
 
   programs.firefox = {
     enable = true;
-    package =
-      if (system == "aarch64-darwin")
-      then pkgs.firefox-bin # IMPORTANT: use a package provided by the overlay (ends with `-bin`) see overlay.nix for all possible packages
-      else pkgs.firefox;
     profiles.default = {
       name = "Default";
       settings = {
@@ -31,6 +22,7 @@
         "gnomeTheme.normalWidthTabs" = false;
         "gnomeTheme.tabsAsHeaderbar" = false;
       };
+      search = searchConfig.search;
       userChrome = ''
         @import "firefox-gnome-theme/userChrome.css";
       '';
