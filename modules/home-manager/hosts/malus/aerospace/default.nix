@@ -142,6 +142,12 @@
       run = ['layout floating']
 
       [[on-window-detected]]
+      if.app-id = 'com.google.Chrome'
+      check-further-callbacks = true
+      if.window-title-regex-substring = 'picture-in-picture'
+      run = ['layout floating']
+
+      [[on-window-detected]]
       if.app-id = 'com.apple.finder'
       check-further-callbacks = true
       run = ['layout tiling', 'move-node-to-workspace 4']
