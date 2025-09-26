@@ -27,11 +27,10 @@ in {
       tree = "eza --icons --tree --group-directories-first";
 
       # Nixos
-      cdnix = "cd ~/nix-config && code ~/nix-config";
-      nix-build = "cd ~/nix-config && ${systemSpecificRebuildCmd} switch --flake";
+      cdnix = "cd ~/nix-config && code ~/nix-config && clear";
       ns = "nom-shell --run zsh";
       nix-switch = "nh os switch";
-      nix-update = "nh os switch --update";
+      nix-update = "nix flake update --option access-tokens \"github.com=$(gh auth token)\"";
       nix-clean = "nh clean all --keep 5";
       nix-search = "nh search";
       nix-test = "nh os test";

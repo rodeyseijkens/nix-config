@@ -11,21 +11,16 @@
     brews = [
       "lua"
       "ripgrep"
-      # "sketchybar"
+      "sketchybar"
       "borders"
     ];
 
     taps = [
       "nikitabobko/tap"
       "felixkratz/formulae"
-      "mocki-toki/formulae"
     ];
 
     casks = [
-      {
-        name = "barik";
-        greedy = true;
-      }
       {
         name = "xcodes";
         greedy = true;

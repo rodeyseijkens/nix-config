@@ -1,7 +1,7 @@
 {...}: {
   imports = [
     ./aerospace
-    # ./sketchybar
-    ./barik
+    ./sketchybar
+    # ./barik
   ];
 }
