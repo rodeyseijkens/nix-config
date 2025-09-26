@@ -11,7 +11,7 @@ source "$CONFIG_DIR/colors.sh" # Loads all defined colors
 ITEMS_DIR="$CONFIG_DIR/items"
 PLUGIN_DIR="$CONFIG_DIR/plugins"
 
-FONT="FiraCode Nerd Font"
+FONT="Maple Mono"
 
 ##### Bar Appearance #####
 # Configuring the general appearance of the bar.

@@ -44,9 +44,9 @@
       # cmd-h = [] # Disable "hide application"
       cmd-alt-h = [] # Disable "hide others"
 
-      cmd-enter = 'exec-and-forget open -n "/Users/${vars.username}/Applications/Home Manager Trampolines/kitty.app"'
-      cmd-e = 'exec-and-forget open -n "/Applications/Marta.app"'
-      cmd-shift-e = 'exec-and-forget open -n "/Applications/QSpace Pro.app"'
+      cmd-shift-enter = 'exec-and-forget open -n "/Users/${vars.username}/Applications/Home Manager Trampolines/kitty.app"'
+      cmd-shift-e = 'exec-and-forget open -n "/Applications/Marta.app"'
+      cmd-e = 'exec-and-forget open -n "/Applications/QSpace Pro.app"'
       cmd-b = 'exec-and-forget open -n "/Users/${vars.username}/Applications/Home Manager Trampolines/Firefox.app"'
 
       alt-semicolon = [
@@ -95,6 +95,7 @@
       cmd-shift-0 = 'move-node-to-workspace 10'
 
       # alt-m = 'exec-and-forget sketchybar --trigger aerospace_switch'
+      cmd-q = 'close'
 
       [mode.service.binding]
       esc = [
