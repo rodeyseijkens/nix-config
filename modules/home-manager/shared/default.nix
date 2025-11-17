@@ -4,6 +4,7 @@
     ./browsers # firefox, zen browser, and google chrome
     ./fastfetch.nix # fetch tool
     ./fzf.nix # fuzzy finder
+    ./ghostty.nix # terminal
     ./git.nix # version control
     ./kitty.nix # terminal
     ./nvim.nix # neovim editor

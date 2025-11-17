@@ -44,7 +44,7 @@
       # cmd-h = [] # Disable "hide application"
       cmd-alt-h = [] # Disable "hide others"
 
-      cmd-shift-enter = 'exec-and-forget open -n "/Users/${vars.username}/Applications/Home Manager Trampolines/kitty.app"'
+      cmd-shift-enter = 'exec-and-forget open -n "/Users/${vars.username}/Applications/Ghostty.app"'
       cmd-shift-e = 'exec-and-forget open -n "/Applications/Marta.app"'
       cmd-e = 'exec-and-forget open -n "/Applications/QSpace Pro.app"'
       cmd-b = 'exec-and-forget open -n "/Users/${vars.username}/Applications/Home Manager Trampolines/Firefox.app"'
@@ -122,6 +122,11 @@
 
       [[on-window-detected]]
       if.app-id = 'net.kovidgoyal.kitty'
+      check-further-callbacks = true
+      run = ['layout tiling', 'move-node-to-workspace 10']
+
+      [[on-window-detected]]
+      if.app-id = 'com.mitchellh.ghostty'
       check-further-callbacks = true
       run = ['layout tiling', 'move-node-to-workspace 10']
 

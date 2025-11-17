@@ -9,11 +9,11 @@
     };
 
     brews = [
+      "borders"
       "lua"
+      "ni"
       "ripgrep"
       "sketchybar"
-      "borders"
-      "ni"
     ];
 
     taps = [
@@ -23,7 +23,7 @@
 
     casks = [
       {
-        name = "xcodes";
+        name = "xcodes-app";
         greedy = true;
       }
       # {
@@ -88,6 +88,10 @@
       }
       {
         name = "the-unarchiver";
+        greedy = true;
+      }
+      {
+        name = "ghostty";
         greedy = true;
       }
       {
