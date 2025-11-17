@@ -13,6 +13,7 @@
       "ripgrep"
       "sketchybar"
       "borders"
+      "ni"
     ];
 
     taps = [
