@@ -12,6 +12,7 @@
     ffmpeg
     file # Show file information
     gnupg # gpg
+    lazygit # terminal git UI
     ncdu # disk space
     nix-prefetch-github
     openssl # ssl
