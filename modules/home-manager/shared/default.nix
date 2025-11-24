@@ -1,6 +1,6 @@
 {...}: {
   imports = [
-    ./bat.nix # better cat command
+    #./bat.nix # better cat command
     ./browsers # firefox, zen browser, and google chrome
     ./fastfetch.nix # fetch tool
     ./fzf.nix # fuzzy finder

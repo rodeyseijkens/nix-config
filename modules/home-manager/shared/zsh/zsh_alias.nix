@@ -9,16 +9,13 @@ in {
       # Utils
       c = "clear";
       cd = "z";
-      cat = "bat";
       # nano = "micro";
       code = "code";
       diff = "delta --diff-so-fancy --side-by-side";
-      less = "bat";
       y = "yazi";
       dsize = "du -hs";
       open = "xdg-open";
       space = "ncdu";
-      man = "BAT_THEME='default' batman";
       sudo = "sudo TERMINFO=\"$TERMINFO\"";
 
       l = "eza --icons  -a --group-directories-first -1"; #EZA_ICON_SPACING=2
