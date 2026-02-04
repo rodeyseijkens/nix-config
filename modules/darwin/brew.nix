@@ -111,7 +111,7 @@
         greedy = true;
       }
       {
-        name = "tigervnc-viewer";
+        name = "tigervnc";
         greedy = true;
       }
       {
