@@ -20,4 +20,9 @@
   system.stateVersion = 5;
 
   system.primaryUser = "${vars.username}";
+
+  programs = {
+    yabai.enable = true;
+    skhd.enable = true;
+  };
 }

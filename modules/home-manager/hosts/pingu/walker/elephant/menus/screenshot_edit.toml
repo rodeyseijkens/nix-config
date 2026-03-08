@@ -1,0 +1,11 @@
+name = "screenshot_edit"
+name_pretty = "Edit Screenshot"
+hide_from_providerlist = true
+
+[[entries]]
+text = "󰩬 Area"
+actions = { "edit" = "screenshot edit-area" }
+
+[[entries]]
+text = "󰹑 Fullscreen"
+actions = { "edit" = "screenshot edit-output" }

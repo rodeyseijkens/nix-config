@@ -33,7 +33,6 @@
         dashboard-in-overlay = false;
         persistent-apps = [
           "/Applications/QSpace Pro.app"
-          "/Applications/Marta.app"
           "/Applications/Google Chrome.app"
         ];
         expose-animation-duration = 0.2;

@@ -1,6 +1,13 @@
-{pkgs, ...}: {
+{
+  hostname,
+  config,
+  pkgs,
+  host,
+  ...
+}: {
   programs.zsh = {
     enable = true;
+    dotDir = config.home.homeDirectory;
     # enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
@@ -157,6 +164,13 @@
         zle -N zle-line-init
         zle -N zle-line-finish
       fi
+
+      # Workaround: set TERM only when running inside Ghostty (avoid affecting other terminals)
+      if [[ "$TERM_PROGRAM" == "ghostty" ]]; then
+        export TERM=xterm-256color
+      fi
+
+      export LC_ALL=en_US.UTF-8
 
       # Add Volta to the path
       export VOLTA_HOME="$HOME/.volta"

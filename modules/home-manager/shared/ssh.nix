@@ -7,13 +7,14 @@
 in {
   programs.ssh = {
     enable = true;
-    extraConfig = ''
-      AddKeysToAgent yes
-      ServerAliveInterval 60
-    '';
+    enableDefaultConfig = false;
     matchBlocks =
       if (system != "aarch64-darwin")
       then {
+        "*" = {
+          addKeysToAgent = "yes";
+          serverAliveInterval = 60;
+        };
         "github.com" = {
           hostname = "github.com";
           user = "rodeyseijkens";
@@ -21,6 +22,10 @@ in {
         };
       }
       else {
+        "*" = {
+          addKeysToAgent = "yes";
+          serverAliveInterval = 60;
+        };
         "github.com-personal" = {
           hostname = "github.com";
           user = "rodeyseijkens";

@@ -4,11 +4,10 @@
   ...
 }: {
   home.packages = with pkgs; [
-    ## CLI utility
     curl # download utility
-    entr # perform action when file change
+    entr
     eza # ls replacement
-    fd # find replacement
+    fd
     ffmpeg
     file # Show file information
     gnupg # gpg
@@ -24,20 +23,14 @@
     yazi # terminal file manager
     yt-dlp-light # audio/video downloader
 
+    # Node.js
+    volta
+
     # Python
     python3
     python312Packages.ipython
 
-    # Node.js
-    volta
-
     # Language servers and formatters
-    alejandra # nix formatter
-    bash-language-server
-    lua-language-server
-    nil # nix language server
-    prettierd # formatter
-    typescript-language-server
-    yaml-language-server
+    inputs.alejandra.defaultPackage.${pkgs.stdenv.hostPlatform.system}
   ];
 }

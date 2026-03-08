@@ -1,0 +1,10 @@
+name = "reload_hyprland_confirm"
+name_pretty = "Restart Hyprland?"
+hide_from_providerlist = true
+
+[[entries]]
+text = "󰄬 Yes"
+actions = { "confirm" = "reload-services hyprland" }
+
+[[entries]]
+text = "󰅖 No"

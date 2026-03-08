@@ -1,32 +1,43 @@
-{system, ...}: let
-  systemSpecificRebuildCmd =
-    if (system == "aarch64-darwin")
-    then "darwin-rebuild"
-    else "sudo nixos-rebuild";
-in {
+{
+  hostname,
+  config,
+  pkgs,
+  host,
+  ...
+}: {
   programs.zsh = {
     shellAliases = {
       # Utils
       c = "clear";
       cd = "z";
-      # nano = "micro";
+      cat = "bat";
+      nano = "micro";
       code = "code";
-      diff = "delta --diff-so-fancy --side-by-side";
+      diff = "git diff | diffnav";
+      less = "bat";
       y = "yazi";
+      py = "python";
+      ipy = "ipython";
       dsize = "du -hs";
+      pdf = "tdf";
       open = "xdg-open";
       space = "ncdu";
-      sudo = "sudo TERMINFO=\"$TERMINFO\"";
+      man = "BAT_THEME='default' batman";
+      genpw = "head /dev/urandom | sha256sum | awk '{printf \"%s\", $1}' | wl-copy && echo 'Password copied to clipboard'";
 
       l = "eza --icons  -a --group-directories-first -1"; #EZA_ICON_SPACING=2
       ll = "eza --icons  -a --group-directories-first -1 --no-user --long";
       tree = "eza --icons --tree --group-directories-first";
 
       # Nixos
-      cdnix = "cd ~/nix-config && code ~/nix-config && clear";
+      cdnix = "cd ~/nixos-config && code ~/nixos-config && clear";
       ns = "nom-shell --run zsh";
-      nix-switch = "nh os switch";
-      nix-update = "nix flake update --option access-tokens \"github.com=$(gh auth token)\"";
+      nix-switch =
+        if pkgs.stdenv.isDarwin
+        then "nh darwin switch"
+        else "nh os switch";
+      nix-update = ''nix flake update --option access-tokens "github.com=$(sed -n 's#https://[^:]*:\([^@]*\)@github\.com#\1#p' /run/secrets/git-credentials | head -n1)"'';
+      nix-update-commit = "nix-update && git add flake.lock && git commit -m 'chore: :package: update flake.lock'";
       nix-clean = "nh clean all --keep 5";
       nix-search = "nh search";
       nix-test = "nh os test";

@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   programs.git = {
     enable = true;
 
@@ -8,7 +12,7 @@
         email = "me@rodey.nl";
       };
       init.defaultBranch = "main";
-      credential.helper = "store";
+      credential.helper = "sops";
       merge.conflictstyle = "diff3";
       diff.colorMoved = "default";
       push.autoSetupRemote = true;
@@ -17,7 +21,7 @@
 
   programs.delta = {
     enable = true;
-    enableGitIntegration = true;
+    enableGitIntegration = false;
     options = {
       line-numbers = true;
       side-by-side = true;
@@ -26,23 +30,59 @@
     };
   };
 
+  programs.lazygit = {
+    enable = true;
+    settings = {
+      gui = {
+        mouseEvents = false;
+      };
+    };
+  };
+
   home.packages = [
     pkgs.gh
-    pkgs.cz-cli # commitizen CLI tool
-    # pkgs.git-lfs # Git Large File Storage
+    pkgs.github-copilot-cli
+    pkgs.cz-cli
+    pkgs.diffnav
+    pkgs.pre-commit
+    pkgs.gitleaks
+    inputs.gen-commit.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 
   programs.zsh.shellAliases = {
-    g = "lazygit";
+    g = "lazygit && clear";
+    gl = "lazygit log --screen-mode full && clear";
     gi = "onefetch --number-of-file-churns 0 --no-color-palette";
+
+    gs = "git status";
+    gd = "git diff | diffnav";
+    glog = "git log --oneline --decorate --graph";
+    glol = "git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset'";
+    glola = "git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --all";
+    glols = "git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --stat";
+
     ga = "git add";
     gaa = "git add --all";
-    gs = "git status";
+    gc = "git commit";
+    gcm = "git commit -m";
+    gca = "git commit --amend --no-edit";
+    gcaa = "git add --all && git commit --amend --no-edit";
+    gcz = "git cz";
+    gcfu = "git commit --fixup HEAD";
+    gcma = "git add --all && git commit -m";
+    gcza = "git add --all && git cz";
+    gcfua = "git add --all && git commit --fixup HEAD";
+    ggcm = "gen-commit -c -a";
+    ggcmw = "gen-commit -c -a -s";
+
+    gb = "git branch";
+    gch = "git checkout";
+    gchb = "git checkout -b";
+    grb = "git rebase";
+    grs = "git reset --soft HEAD~";
+
     gf = "git fetch";
     gfp = "git fetch --prune";
-    gb = "git branch";
-    gm = "git merge";
-    gd = "git diff";
     gpl = "git pull";
     gplo = "git pull origin";
     gps = "git push";
@@ -50,21 +90,14 @@
     gpso = "git push origin";
     gpst = "git push --follow-tags";
     gcl = "git clone";
-    gc = "git commit";
-    gcm = "git commit -m";
-    gca = "git commit --amend";
-    gcaa = "git add --all && git commit --amend --no-edit";
-    gcz = "git cz";
-    gcfu = "git commit --fixup HEAD";
-    gcma = "git add --all && git commit -m";
-    gcza = "git add --all && git cz";
-    gcfua = "git add --all && git commit --fixup HEAD";
+
     gtag = "git tag -ma";
-    gch = "git checkout";
-    gchb = "git checkout -b";
-    glog = "git log --oneline --decorate --graph";
-    glol = "git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset'";
-    glola = "git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --all";
-    glols = "git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --stat";
+    gm = "git merge";
+    gsp = "git stash push -m";
+    gsl = "git stash list | sed -E 's/stash@\\{([0-9]+)\\}: (WIP on |On )?([^:]+): (.*)/\\x1b[44;37m \\1 \\x1b[0m\\x1b[34;48;5;238m\\xee\\x82\\xb0\\x1b[0m\\x1b[48;5;238;37m \\xee\\x82\\xa0 \\3 \\x1b[0m\\x1b[38;5;238m\\xee\\x82\\xb0\\x1b[0m \\4/'";
   };
+
+  programs.zsh.initContent = ''
+    gsa() { git stash apply "stash@{''${1:-0}}"; }
+  '';
 }

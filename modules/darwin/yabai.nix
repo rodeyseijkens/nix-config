@@ -1,0 +1,97 @@
+{
+  lib,
+  config,
+  vars,
+  ...
+}:
+with lib; let
+  cfg = config.programs.yabai;
+in {
+  options.programs.yabai = {
+    enable =
+      mkEnableOption "yabai window manager"
+      // {
+        default = true;
+      };
+    config = mkOption {
+      type = types.attrsOf types.str;
+      default = {};
+      description = "Yabai configuration options";
+    };
+    extraConfig = mkOption {
+      type = types.lines;
+      default = "";
+      description = "Extra yabai configuration";
+    };
+  };
+
+  config = mkIf cfg.enable {
+    services.jankyborders = {
+      enable = true;
+      active_color = "0xFF98971A";
+      inactive_color = "0x00000000";
+      style = "round";
+      width = 5.0;
+    };
+
+    services.yabai = {
+      enable = true;
+      enableScriptingAddition = true;
+      config =
+        {
+          focus_follows_mouse = "off";
+          mouse_follows_focus = "off";
+          external_bar = "all:24:0";
+          window_placement = "second_child";
+          window_opacity = "on";
+          window_opacity_duration = "0.0";
+          active_window_border_topmost = "off";
+          window_topmost = "on";
+          window_shadow = "float";
+          active_window_opacity = "1.0";
+          normal_window_opacity = "1.0";
+          split_ratio = "0.50";
+          auto_balance = "on";
+          mouse_modifier = "fn";
+          mouse_action1 = "move";
+          mouse_action2 = "resize";
+          layout = "bsp";
+          top_padding = 10;
+          bottom_padding = 10;
+          left_padding = 10;
+          right_padding = 10;
+          window_gap = 10;
+        }
+        // cfg.config;
+      extraConfig =
+        ''
+          yabai -m space 1 --label "1"
+          yabai -m space 2 --label "2"
+          yabai -m space 3 --label "3"
+          yabai -m space 4 --label "4"
+          yabai -m space 5 --label "5"
+          yabai -m space 6 --label "6"
+          yabai -m space 7 --label "7"
+          yabai -m space 8 --label "8"
+          yabai -m space 9 --label "9"
+          yabai -m space 10 --label "10"
+
+          yabai -m rule --add app="^kitty$" space=10 manage=on
+          yabai -m rule --add app="^Ghostty$" space=10 manage=on
+          yabai -m rule --add app="^Ghostty$" title="floating-terminal" manage=off
+          yabai -m rule --add app="^firefox$" space=9 manage=on
+          yabai -m rule --add app="^Zen$" space=9 manage=on
+          yabai -m rule --add app="^firefox$" title=".*picture-in-picture.*" manage=off
+          yabai -m rule --add app="^Zen$" title=".*picture-in-picture.*" manage=off
+          yabai -m rule --add app="^Safari$" title=".*picture-in-picture.*" manage=off
+          yabai -m rule --add app="^Google Chrome$" title=".*picture-in-picture.*" manage=off
+          yabai -m rule --add app="^Finder$" space=4 manage=on
+          yabai -m rule --add app="^Marta$" space=4 manage=on
+          yabai -m rule --add app="^QSpace Pro$" space=4 manage=on
+          yabai -m rule --add app="^Code$" space=2 manage=on
+          yabai -m rule --add app="^Google Chrome$" space=1 manage=on
+        ''
+        + cfg.extraConfig;
+    };
+  };
+}

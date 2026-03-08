@@ -1,19 +1,25 @@
 {...}: {
   imports = [
-    #./bat.nix # better cat command
-    ./browsers # firefox, zen browser, and google chrome
-    ./fastfetch.nix # fetch tool
-    ./fzf.nix # fuzzy finder
-    ./ghostty.nix # terminal
-    ./git.nix # version control
-    ./kitty.nix # terminal
-    ./nvim.nix # neovim editor
-    ./nh # nix helper
-    ./p10k/p10k.nix # zsh theme
-    ./packages.nix # other packages
-    ./spicetify.nix # spotify client
-    ./ssh.nix # ssh client
-    ./vscode.nix # vscode
-    ./zsh # shell
+    ./bat.nix
+    ./browsers
+    ./cursor-editor.nix
+    ./fastfetch.nix
+    ./fzf.nix
+    ./git.nix
+    ./ghostty.nix
+    ./legcord
+    ./llm
+    ./micro.nix
+    ./nvim.nix
+    ./nh
+    ./obs-studio.nix
+    ./p10k/p10k.nix
+    ./packages.nix
+    ./spicetify.nix
+    ./ssh.nix
+    ./stylix.nix
+    ./vscode
+    ./zed-editor.nix
+    ./zsh
   ];
 }

@@ -9,11 +9,9 @@
     };
 
     brews = [
-      "borders"
       "lua"
       "ni"
       "ripgrep"
-      "sketchybar"
     ];
 
     taps = [
@@ -44,10 +42,6 @@
       }
       {
         name = "font-space-mono-nerd-font";
-        greedy = true;
-      }
-      {
-        name = "font-sketchybar-app-font";
         greedy = true;
       }
       {
@@ -83,15 +77,7 @@
         greedy = true;
       }
       {
-        name = "aerospace";
-        greedy = true;
-      }
-      {
         name = "the-unarchiver";
-        greedy = true;
-      }
-      {
-        name = "ghostty";
         greedy = true;
       }
       {

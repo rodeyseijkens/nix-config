@@ -11,11 +11,4 @@
       # batdiff
     ];
   };
-  programs.zsh = {
-    shellAliases = {
-      cat = "bat";
-      less = "bat";
-      man = "BAT_THEME='default' batman";
-    };
-  };
 }

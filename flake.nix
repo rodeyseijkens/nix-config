@@ -18,16 +18,17 @@
     };
     nix-homebrew = {
       url = "github:zhaofengli-wip/nix-homebrew";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    agenix = {
-      url = "github:ryantm/agenix";
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.home-manager.follows = "home-manager";
+    };
+    nix-flatpak = {
+      url = "github:gmodena/nix-flatpak";
     };
     impermanence = {
       url = "github:nix-community/impermanence";
@@ -51,6 +52,59 @@
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    alejandra = {
+      url = "github:kamadorueda/alejandra/4.0.0";
+    };
+    nix-gaming = {
+      url = "github:fufexan/nix-gaming";
+    };
+    nix-citizen = {
+      url = "github:LovingMelody/nix-citizen";
+      inputs.nix-gaming.follows = "nix-gaming";
+    };
+    hyprland = {
+      url = "github:hyprwm/Hyprland";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    hyprmag = {
+      url = "github:SIMULATAN/hyprmag";
+    };
+    hypr-contrib = {
+      url = "github:hyprwm/contrib";
+      inputs.nixpkgs.follows = "hyprland/nixpkgs";
+    };
+    hyprpicker = {
+      url = "github:hyprwm/hyprpicker";
+      inputs.nixpkgs.follows = "hyprland/nixpkgs";
+    };
+    stylix = {
+      url = "github:danth/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    ghostty = {
+      url = "github:ghostty-org/ghostty";
+    };
+    gen-commit = {
+      url = "github:rodeyseijkens/gen-commit";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    worktrunk = {
+      url = "github:max-sixty/worktrunk";
+    };
+    elephant = {
+      url = "github:abenz1267/elephant";
+    };
+    walker = {
+      url = "github:abenz1267/walker";
+      inputs.elephant.follows = "elephant";
+    };
+    cursor-editor = {
+      url = "github:tomsch/cursor-nix";
+    };
+    t3code = {
+      url = "github:rodeyseijkens/t3code-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -60,7 +114,7 @@
     mac-app-util,
     nix-homebrew,
     home-manager,
-    agenix,
+    sops-nix,
     impermanence,
     ...
   } @ inputs: let
@@ -109,11 +163,14 @@
           (builtins.attrValues nixosModules)
           ++ [
             (./. + "/hosts/${hostname}")
-            agenix.nixosModules.default
             impermanence.nixosModules.impermanence
             home-manager.nixosModules.home-manager
+            sops-nix.nixosModules.sops
             {
-              home-manager.useGlobalPkgs = true;
+              home-manager.sharedModules = [
+                sops-nix.homeManagerModules.sops
+              ];
+              home-manager.useGlobalPkgs = false;
               home-manager.useUserPackages = true;
               home-manager.users."${vars.username}" = homeManagerModules;
               home-manager.extraSpecialArgs =
@@ -143,14 +200,14 @@
           (builtins.attrValues darwinModules)
           ++ [
             (./. + "/hosts/${hostname}")
-            agenix.nixosModules.default
             mac-app-util.darwinModules.default
             home-manager.darwinModules.home-manager
             {
               home-manager.sharedModules = [
+                sops-nix.homeManagerModules.sops
                 mac-app-util.homeManagerModules.default
               ];
-              home-manager.useGlobalPkgs = true;
+              home-manager.useGlobalPkgs = false;
               home-manager.useUserPackages = true;
               home-manager.users."${vars.username}" = homeManagerModules;
               home-manager.extraSpecialArgs =

@@ -1,0 +1,11 @@
+name = "screenshot_timer"
+name_pretty = "Timer Screenshot"
+hide_from_providerlist = true
+
+[[entries]]
+text = "󰔛 5s"
+submenu = "screenshot_timer_5"
+
+[[entries]]
+text = "󱑎 10s"
+submenu = "screenshot_timer_10"

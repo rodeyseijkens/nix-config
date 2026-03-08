@@ -18,5 +18,7 @@
     networkmanager.enable = false;
   };
 
+  powerManagement.cpuFreqGovernor = "performance";
+
   system.stateVersion = "24.11";
 }
