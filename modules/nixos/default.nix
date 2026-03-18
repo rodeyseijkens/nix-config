@@ -4,7 +4,6 @@
   ...
 }: {
   imports = [
-    (./. + "/hosts/${hostname}")
     ./bootloader
     ./btop
     ./drivers

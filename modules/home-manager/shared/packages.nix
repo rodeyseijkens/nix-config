@@ -5,10 +5,10 @@
 }: {
   home.packages = with pkgs; [
     curl # download utility
-    entr
+    entr # run arbitrary commands when files change
     eza # ls replacement
-    fd
-    ffmpeg
+    fd # find replacement
+    ffmpeg # multimedia framework
     file # Show file information
     gnupg # gpg
     lazygit # terminal git UI
@@ -22,6 +22,11 @@
     xz # xz compression
     yazi # terminal file manager
     yt-dlp-light # audio/video downloader
+    imagemagick # image manipulation
+    viu # terminal image viewer
+    mpv # media player
+    jq # JSON processor
+    onefetch # git repository information
 
     # Node.js
     volta

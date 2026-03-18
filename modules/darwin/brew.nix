@@ -24,10 +24,6 @@
         name = "xcodes-app";
         greedy = true;
       }
-      # {
-      #   name = "localsend";
-      #   greedy = true;
-      # }
       {
         name = "sf-symbols";
         greedy = true;
@@ -78,10 +74,6 @@
       }
       {
         name = "the-unarchiver";
-        greedy = true;
-      }
-      {
-        name = "google-chrome";
         greedy = true;
       }
       {

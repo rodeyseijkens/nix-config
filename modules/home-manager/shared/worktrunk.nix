@@ -8,7 +8,9 @@
 }: let
   cfg = config.modules.worktrunk;
 in {
-  options.modules.worktrunk = lib.mkEnableOption "worktrunk";
+  options.modules.worktrunk = {
+    enable = lib.mkEnableOption "worktrunk";
+  };
   config = lib.mkIf cfg.enable {
     home.packages = [
       inputs.worktrunk.packages.${system}.default
@@ -56,7 +58,7 @@ in {
 
               rm -f "''$directive_file"
               return "''$exit_code"
-          fi
+          }
 
           # Lazy completions - generate on first TAB, then delegate to clap's completer
           _wt_lazy_complete() {
@@ -75,7 +77,7 @@ in {
                   eval "''$(COMPLETE=zsh command "''${WORKTRUNK_BIN:-wt}" 2>/dev/null | sed "s/_describe 'values'/_describe -V 'values'/")" || return
               fi
               _clap_dynamic_completer_wt "''$@"
-          fi
+          }
 
           # Register completion (silently skip if compinit hasn't run yet).
           # We don't warn here because this script runs on every shell startup - users

@@ -6,9 +6,9 @@
   ...
 }:
 with lib; let
-  cfg = config.module.star-citizen;
+  cfg = config.core.star-citizen;
 in {
-  options.module.star-citizen = {
+  options.core.star-citizen = {
     enable = mkEnableOption "Enable Star Citizen";
   };
 

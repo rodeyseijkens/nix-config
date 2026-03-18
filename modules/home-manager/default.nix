@@ -2,11 +2,19 @@
   hostname,
   vars,
   ...
-}: {
-  imports = [
-    (./. + "/hosts/${hostname}")
-    ./shared
-  ];
+}: let
+  hostModulesPath = ./. + "/hosts/${hostname}";
+in {
+  imports =
+    [
+      (../../. + "/hosts/${hostname}/hm.nix")
+      ./shared
+    ]
+    ++ (
+      if builtins.pathExists hostModulesPath
+      then [hostModulesPath]
+      else []
+    );
 
   nixpkgs.config.allowUnfree = true;
 

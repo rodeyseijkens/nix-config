@@ -4,9 +4,9 @@
   ...
 }:
 with lib; let
-  cfg = config.programs.skhd;
+  cfg = config.core.skhd;
 in {
-  options.programs.skhd = {
+  options.core.skhd = {
     enable =
       mkEnableOption "skhd hotkey daemon"
       // {

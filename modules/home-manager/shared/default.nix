@@ -4,21 +4,24 @@
     ./browsers
     ./cursor-editor.nix
     ./fastfetch.nix
+    ./fonts.nix
     ./fzf.nix
     ./git.nix
     ./ghostty.nix
     ./legcord
-    ./llm
+    ./llm.nix
     ./micro.nix
     ./nvim.nix
-    ./nh
+    ./nh.nix
     ./obs-studio.nix
     ./p10k/p10k.nix
     ./packages.nix
     ./spicetify.nix
     ./ssh.nix
     ./stylix.nix
+    ./tigervnc.nix
     ./vscode
+    ./worktrunk.nix
     ./zed-editor.nix
     ./zsh
   ];

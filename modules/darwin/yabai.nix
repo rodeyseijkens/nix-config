@@ -5,9 +5,9 @@
   ...
 }:
 with lib; let
-  cfg = config.programs.yabai;
+  cfg = config.core.yabai;
 in {
-  options.programs.yabai = {
+  options.core.yabai = {
     enable =
       mkEnableOption "yabai window manager"
       // {

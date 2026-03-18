@@ -6,13 +6,13 @@
   ...
 }:
 with lib; let
-  cfg = config.module.steam;
+  cfg = config.core.steam;
 in {
   imports = [
     inputs.nix-gaming.nixosModules.platformOptimizations
   ];
 
-  options.module.steam = {
+  options.core.steam = {
     enable = mkEnableOption "Enable Steam";
   };
 

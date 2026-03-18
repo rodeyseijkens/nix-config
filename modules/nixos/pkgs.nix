@@ -7,18 +7,13 @@
 
   environment.systemPackages = with pkgs; [
     dconf-editor
-    jq
     killall
     libnotify
     man-pages
-    mpv
     wl-clipboard
-    onefetch
     gifsicle
     zenity
     satty
-    imagemagick
-    viu
 
     cbonsai
     cmatrix

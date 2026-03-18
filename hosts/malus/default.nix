@@ -21,7 +21,7 @@
 
   system.primaryUser = "${vars.username}";
 
-  programs = {
+  core = {
     yabai.enable = true;
     skhd.enable = true;
   };
