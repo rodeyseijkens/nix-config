@@ -13,7 +13,7 @@ in {
     programs.chromium = {
       enable = true;
       package = pkgs.google-chrome;
-      commandLineArgs = [
+      commandLineArgs = lib.optionals pkgs.stdenv.isLinux [
         "--enable-features=UseOzonePlatform"
         "--ozone-platform=wayland"
       ];
