@@ -17,7 +17,7 @@
       "--color=prompt:#CC241D,spinner:#689D6A,pointer:#D65D0E,header:#458588"
       "--color=border:#665C54,label:#aeaeae,query:#FBF1C7"
       "--border='rounded' --border-label='' --preview-window='border-rounded' --prompt='> '"
-      "--marker='>' --pointer='>' --separator='─' --scrollbar='│'"
+      "--marker='>' --pointer='>' --separator='─' --scrollbar='|'"
       "--info='right'"
     ];
   };
